@@ -3,25 +3,51 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	/* primary colors */
+	--slate: #1e1e24;
+	--brown: #92140c;
+	--eggshell: #fff8f0;
+	--beige: #ffcf99;
+	--navy: #111d4a;
+
+	/* accent colors */
+	--success: #008000;
+	--info: #1768ac;
+	--warning: #ffa737;
+	--danger: #da2c38;
+
+	/* monochromes */
+	--gray-light: #adb5bd;
+	--gray-mid: #6c757d;
+	--gray-dark: #343739;
+	--black: #0f0606;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	@apply bg-[var(--gray-light)];
+	overflow-y: hidden;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 18px;
 }
