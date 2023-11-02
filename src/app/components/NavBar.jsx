@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 const NavBar = () => {
 	return (
 		<nav
-			className="flex justify-between p-4 items-center"
+			className="flex justify-between py-5 px-8 items-center border-b-2 border-slate-400"
 			style={{
 				backgroundColor: "var(--navy)",
 				color: "var(--eggshell)",
@@ -27,11 +27,11 @@ const NavBar = () => {
 			</Link>
 
 			{/* search bar middle */}
-			<div className="flex w-[25%] ml-20">
+			<div className="flex w-[25%] ml-20 mt-2">
 				<input
 					type="text"
 					placeholder="Find a book, student.."
-					className="bg-gray-700 py-2 px-4 w-full rounded-full outline-none text-gray-300"
+					className="py-2 px-4 w-full rounded-full outline-none text-gray-800 bg-gray-300"
 				/>
 			</div>
 
