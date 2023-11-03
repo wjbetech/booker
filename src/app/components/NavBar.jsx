@@ -27,7 +27,7 @@ const NavBar = () => {
 			</Link>
 
 			{/* search bar middle */}
-			<div className="flex w-[25%] ml-20 mt-2">
+			<div className="flex w-[75%] max-w-[300px] ml-20 mt-2">
 				<input
 					type="text"
 					placeholder="Find a book, student.."
@@ -36,7 +36,7 @@ const NavBar = () => {
 			</div>
 
 			{/* right side buttons */}
-			<div className="flex mr-4 mt-2">
+			<div className="mr-4 mt-2 hidden lg:flex ">
 				<div className="flex flex-col items-center border-r-2 px-6 border-slate-600">
 					<BsPersonPlus size={24} />
 					<h5>Add Child</h5>
