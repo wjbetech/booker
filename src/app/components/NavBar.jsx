@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 const NavBar = () => {
 	return (
 		<nav
-			className="flex justify-between py-5 px-8 items-center border-b-2 border-slate-400"
+			className="flex justify-between py-5 pl-8 pr-2 items-center border-b-2 border-slate-400"
 			style={{
 				backgroundColor: "var(--navy)",
 				color: "var(--eggshell)",
@@ -37,15 +37,15 @@ const NavBar = () => {
 
 			{/* right side buttons */}
 			<div className="mr-4 mt-2 hidden lg:flex ">
-				<div className="flex flex-col items-center border-r-2 px-6 border-slate-600">
+				<div className="flex flex-col items-center border-r-2 px-6 py-2 border-slate-600 hover:bg-slate-500 hover:cursor-pointer">
 					<BsPersonPlus size={24} />
 					<h5>Add Child</h5>
 				</div>
-				<div className="flex flex-col items-center border-r-2 px-6 border-slate-600">
+				<div className="flex flex-col items-center border-r-2 px-6 py-2 border-slate-600 hover:bg-slate-500 hover:cursor-pointer">
 					<BiBookAdd size={24} />
 					<h5>Add Book</h5>
 				</div>
-				<div className="flex flex-col items-center pl-6">
+				<div className="flex flex-col items-center pl-6 py-2 hover:bg-slate-500 hover:cursor-pointer pr-6">
 					<FiCornerUpRight size={24} />
 					<h5>Loan Book</h5>
 				</div>
