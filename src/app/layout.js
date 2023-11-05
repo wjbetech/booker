@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 			>
 				<div className="flex flex-col h-screen max-h-screen">
 					<NavBar />
-					<div className="flex">
+					<div className="flex h-full">
 						<SideBar />
 						<div className="w-full">
 							{children}
