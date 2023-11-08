@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Playfair_Display } from "next/font/google";
-import { useToaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const playfair = Playfair_Display({
 	subsets: ["latin"],
@@ -11,7 +11,9 @@ const playfair = Playfair_Display({
 
 const AddBookForm = () => {
 	const router = useRouter();
-	const { success } = useToaster();
+
+	const bookAddedToast = () =>
+		toast("Book added to library.");
 
 	const startingBookData = {
 		title: "",
@@ -39,25 +41,38 @@ const AddBookForm = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const res = await fetch("/api/Books", {
-			method: "POST",
-			body: JSON.stringify({ newBookData }),
-			"content-type": "application/json",
-		});
+		try {
+			const res = await fetch("/api/Books", {
+				method: "POST",
+				body: JSON.stringify({ newBookData }),
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
 
-		if (!res.ok) {
-			throw new Error(
-				"Failed to add book to library"
-			);
+			if (!res.ok) {
+				throw new Error(
+					"Failed to add book to library"
+				);
+			}
+
+			const data = await res.json();
+			console.log("Response data:", data); // Log the response data for debugging
+
+			if (data.posted) {
+				bookAddedToast();
+			} else {
+				throw new Error(
+					"Failed to add book to library"
+				);
+			}
+
+			setNewBookData(startingBookData);
+			router.refresh();
+			router.push("/AddBook");
+		} catch (error) {
+			console.error("Error:", error); // Log any errors for debugging
 		}
-
-		success(
-			"Book added to library successfully!"
-		);
-
-		setNewBookData(startingBookData);
-		router.refresh();
-		router.push("/AddBook");
 	};
 
 	return (

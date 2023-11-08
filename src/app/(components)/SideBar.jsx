@@ -1,6 +1,7 @@
 // page setup
 import React from "react";
 import { Playfair_Display } from "next/font/google";
+import Link from "next/link";
 
 // icons
 import { AiOutlineHome } from "react-icons/ai";
@@ -28,27 +29,33 @@ const Sidebar = () => {
 					/>{" "}
 					Home
 				</li>
-				<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
-					<PiStudentDuotone
-						size={20}
-						className=""
-					/>{" "}
-					Students
-				</li>
-				<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
-					<PiBooksLight
-						size={20}
-						className=""
-					/>{" "}
-					Books
-				</li>
-				<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
-					<FiCornerUpRight
-						size={20}
-						className=""
-					/>{" "}
-					On Loan
-				</li>
+				<Link href="/Students">
+					<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
+						<PiStudentDuotone
+							size={20}
+							className=""
+						/>{" "}
+						Students
+					</li>
+				</Link>
+				<Link href="/Books">
+					<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
+						<PiBooksLight
+							size={20}
+							className=""
+						/>{" "}
+						Books
+					</li>
+				</Link>
+				<Link href="/Loans">
+					<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
+						<FiCornerUpRight
+							size={20}
+							className=""
+						/>{" "}
+						On Loan
+					</li>
+				</Link>
 			</ul>
 			<div className="mt-auto mx-auto text-[var(--eggshell)]">
 				<span className="justify-end flex text-center">
