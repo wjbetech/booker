@@ -7,8 +7,8 @@ const studentSchema = new Schema({
 	name: String,
 	age: Number,
 	schoolYear: Number,
-	Class: String,
-	loan: Boolean,
+	class: String || Number,
+	teacher: String,
 	booksOnLoan: Array,
 });
 

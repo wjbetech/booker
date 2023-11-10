@@ -20,11 +20,14 @@ const NavBar = () => {
 		>
 			{/* left side clickable logo */}
 			<div className="flex w-full justify-between lg:w-[400px] pr-6 gap-4">
-				<Link href="/">
-					<h1 className={playfair.className}>
+				<h1 className={playfair.className}>
+					<Link
+						className={playfair.className}
+						href="/"
+					>
 						Booker
-					</h1>
-				</Link>
+					</Link>
+				</h1>
 				<div className="ml-10 mt-2 items-center justify-end w-full hidden sm:flex">
 					<input
 						type="text"

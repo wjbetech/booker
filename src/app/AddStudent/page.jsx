@@ -1,9 +1,12 @@
-import addStudentForm from "../(components)/AddStudentForm";
-
 import React from "react";
+import AddStudentForm from "../(components)/AddStudentForm";
 
-const AddStudentPage = () => {
-	return <div>Add Student Page</div>;
+const AddBook = () => {
+	return (
+		<div className="flex">
+			<AddStudentForm />
+		</div>
+	);
 };
 
-export default AddStudentPage;
+export default AddBook;
