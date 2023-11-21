@@ -3,10 +3,8 @@ import BooksView from "../(components)/BooksView";
 
 const BooksPage = () => {
 	return (
-		<div>
-			<h1 className="text-[var(--eggshell)]">
-				Books
-			</h1>
+		<div className="p-10">
+			<h1 className="text-[var(--eggshell)]">Books</h1>
 			<BooksView />
 		</div>
 	);

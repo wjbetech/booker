@@ -21,10 +21,7 @@ const NavBar = () => {
 			{/* left side clickable logo */}
 			<div className="flex w-full justify-between lg:w-[400px] pr-6 gap-4">
 				<h1 className={playfair.className}>
-					<Link
-						className={playfair.className}
-						href="/"
-					>
+					<Link className={playfair.className} href="/">
 						Booker
 					</Link>
 				</h1>

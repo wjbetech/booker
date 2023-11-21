@@ -12,8 +12,7 @@ const playfair = Playfair_Display({
 const AddBookForm = () => {
 	const router = useRouter();
 
-	const bookAddedToast = () =>
-		toast("Book added to library.");
+	const bookAddedToast = () => toast("Book added to library.");
 
 	const startingBookData = {
 		title: "",
@@ -24,9 +23,7 @@ const AddBookForm = () => {
 		genre: "",
 	};
 
-	const [newBookData, setNewBookData] = useState(
-		startingBookData
-	);
+	const [newBookData, setNewBookData] = useState(startingBookData);
 
 	const handleChange = (e) => {
 		e.preventDefault();
@@ -51,9 +48,7 @@ const AddBookForm = () => {
 			});
 
 			if (!res.ok) {
-				throw new Error(
-					"Failed to add book to library"
-				);
+				throw new Error("Failed to add book to library");
 			}
 
 			const data = await res.json();
@@ -62,9 +57,7 @@ const AddBookForm = () => {
 			if (data.posted) {
 				bookAddedToast();
 			} else {
-				throw new Error(
-					"Failed to add book to library"
-				);
+				throw new Error("Failed to add book to library");
 			}
 
 			setNewBookData(startingBookData);
@@ -77,9 +70,7 @@ const AddBookForm = () => {
 
 	return (
 		<div className="flex flex-col mt-10 mx-auto sm:mx-auto text-[var(--eggshell)] items-left justify-center">
-			<h1
-				className={`${playfair.className} text-center mt-10 mb-10`}
-			>
+			<h1 className={`${playfair.className} text-center mt-10 mb-10`}>
 				Add a Book
 			</h1>
 			<form
@@ -90,10 +81,7 @@ const AddBookForm = () => {
 				{/* book title */}
 				<div className="flex flex-col gap-4 w-[375px] sm:w-[500px]">
 					<div className="flex items-center">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Title:
 						</label>
 						<input
@@ -107,10 +95,7 @@ const AddBookForm = () => {
 					</div>
 					{/* ISBN Code */}
 					<div className="flex items-center  gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							ISBN:
 						</label>
 						<input
@@ -124,10 +109,7 @@ const AddBookForm = () => {
 					</div>
 					{/* author */}
 					<div className="flex items-center gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Author:
 						</label>
 						<input
@@ -141,10 +123,7 @@ const AddBookForm = () => {
 					</div>
 					{/* year of publication */}
 					<div className="flex items-center gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Publication Year:
 						</label>
 						<input
@@ -158,10 +137,7 @@ const AddBookForm = () => {
 					</div>
 					{/* cover */}
 					<div className="flex items-center gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Cover Image (URL):
 						</label>
 						<input
@@ -174,10 +150,7 @@ const AddBookForm = () => {
 					</div>
 					{/* genre */}
 					<div className="flex items-center gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Genre:
 						</label>
 						<input

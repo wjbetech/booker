@@ -6,10 +6,7 @@ export async function GET(req) {
 		const data = await Book.find();
 		console.log(data);
 	} catch (error) {
-		return NextResponse.json(
-			{ message: "Error!", error },
-			{ status: 500 }
-		);
+		return NextResponse.json({ message: "Error!", error }, { status: 500 });
 	}
 }
 
@@ -24,12 +21,9 @@ export async function POST(req) {
 				message: "Book successfully added to DB.",
 				posted: true,
 			},
-			{ status: 201 }
+			{ status: 201 },
 		);
 	} catch (error) {
-		return NextResponse.json(
-			{ message: "Error!", error },
-			{ status: 500 }
-		);
+		return NextResponse.json({ message: "Error!", error }, { status: 500 });
 	}
 }

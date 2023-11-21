@@ -20,8 +20,7 @@ const AddStudentForm = () => {
 		booksOnLoan: [],
 	};
 
-	const [newStudentData, setNewStudentData] =
-		useState(startingStudentData);
+	const [newStudentData, setNewStudentData] = useState(startingStudentData);
 
 	const handleChange = (e) => {
 		e.preventDefault();
@@ -46,9 +45,7 @@ const AddStudentForm = () => {
 			});
 
 			if (!res.ok) {
-				throw new Error(
-					"Failed to add student to student list."
-				);
+				throw new Error("Failed to add student to student list.");
 			}
 
 			const data = await res.json();
@@ -64,9 +61,7 @@ const AddStudentForm = () => {
 
 	return (
 		<div className="flex flex-col mt-10 mx-auto sm:mx-auto text-[var(--eggshell)] items-left justify-center">
-			<h1
-				className={`${playfair.className} text-center mt-10 mb-10`}
-			>
+			<h1 className={`${playfair.className} text-center mt-10 mb-10`}>
 				Add a Student
 			</h1>
 			<form
@@ -77,10 +72,7 @@ const AddStudentForm = () => {
 				{/* book title */}
 				<div className="flex flex-col gap-4 w-[375px] sm:w-[500px]">
 					<div className="flex items-center">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Name:
 						</label>
 						<input
@@ -94,10 +86,7 @@ const AddStudentForm = () => {
 					</div>
 					{/* ISBN Code */}
 					<div className="flex items-center  gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Age:
 						</label>
 						<input
@@ -111,10 +100,7 @@ const AddStudentForm = () => {
 					</div>
 					{/* author */}
 					<div className="flex items-center gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							School Year:
 						</label>
 						<input
@@ -128,10 +114,7 @@ const AddStudentForm = () => {
 					</div>
 					{/* year of publication */}
 					<div className="flex items-center gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Class:
 						</label>
 						<input
@@ -144,10 +127,7 @@ const AddStudentForm = () => {
 					</div>
 					{/* cover */}
 					<div className="flex items-center gap-3">
-						<label
-							htmlFor=""
-							className="text-[var(--eggshell)]"
-						>
+						<label htmlFor="" className="text-[var(--eggshell)]">
 							Teacher:
 						</label>
 						<select
@@ -156,18 +136,10 @@ const AddStudentForm = () => {
 							onChange={handleChange}
 							value={newStudentData.teacher}
 						>
-							<option value="Mr William">
-								Mr William
-							</option>
-							<option value="Mr Austin">
-								Mr Austin
-							</option>
-							<option value="Ms Angie">
-								Ms Angie
-							</option>
-							<option value="Ms Jessica">
-								Ms Jessica
-							</option>
+							<option value="Mr William">Mr William</option>
+							<option value="Mr Austin">Mr Austin</option>
+							<option value="Ms Angie">Ms Angie</option>
+							<option value="Ms Jessica">Ms Jessica</option>
 						</select>
 					</div>
 					{/* genre */}

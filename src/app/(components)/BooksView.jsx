@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Playfair_Display } from "next/font/google";
+import React from "react";
 
 const BooksView = () => {
 	return (

@@ -22,38 +22,24 @@ const Sidebar = () => {
 				Menu
 			</h2>
 			<ul className="text-[var(--eggshell)] flex flex-col gap-4">
-				<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
-					<AiOutlineHome
-						size={20}
-						className=""
-					/>{" "}
-					Home
-				</li>
+				<Link href="/">
+					<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
+						<AiOutlineHome size={20} className="" /> Home
+					</li>
+				</Link>
 				<Link href="/Students">
 					<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
-						<PiStudentDuotone
-							size={20}
-							className=""
-						/>{" "}
-						Students
+						<PiStudentDuotone size={20} className="" /> Students
 					</li>
 				</Link>
 				<Link href="/Books">
 					<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
-						<PiBooksLight
-							size={20}
-							className=""
-						/>{" "}
-						Books
+						<PiBooksLight size={20} className="" /> Books
 					</li>
 				</Link>
 				<Link href="/Loans">
 					<li className="hover:bg-slate-500 px-4 py-1 rounded-full w-[75%] hover:cursor-pointer flex gap-4 items-center">
-						<FiCornerUpRight
-							size={20}
-							className=""
-						/>{" "}
-						On Loan
+						<FiCornerUpRight size={20} className="" /> On Loan
 					</li>
 				</Link>
 			</ul>
