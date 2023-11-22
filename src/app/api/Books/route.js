@@ -1,10 +1,10 @@
 import Book from "../../(models)/book";
 import { NextResponse } from "next/server";
 
-export async function GET(req) {
+export async function GET() {
 	try {
-		const data = await Book.find();
-		console.log(data);
+		const books = await Book.find();
+		return NextResponse.json({ books }, { status: 200 });
 	} catch (error) {
 		return NextResponse.json({ message: "Error!", error }, { status: 500 });
 	}
