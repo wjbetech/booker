@@ -1,16 +1,28 @@
 "use client";
+// book data: title, ISBN, author, publicationYear, imageUrl, genre, onLoan
 
 import React from "react";
+import Image from "next/image";
 
 const BooksView = ({ book }) => {
 	return (
-		<div className="text-[var(--eggshell)] grid bg-gray-600 rounded-md p-4 m-3 w-[31%]">
-			<div className="flex flex-col">
-				<h4>{book.title}</h4>
-				<hr className="my-4" />
-				<div className="flex mt-auto">
-					<p>{book.genre}</p>
-				</div>
+		<div className="text-[var(--eggshell)] bg-gray-600 rounded-md p-4 m-3 md:w-[48%] lg:w-[31%] shadow-lg shadow-gray-700">
+			<h4 className="text-xl font-semibold mt-2 h-[85px]">{book.title}</h4>
+			<Image
+				width={250}
+				height={250}
+				src={book.imageUrl}
+				alt={`${book.title} Cover`}
+				className="mb-6 object-contain rounded-md shadow-lg shadow-black mx-auto"
+			/>
+			<div className="flex flex-col mt-14">
+				<p className="text-gray-300 mb-2">Author: {book.author}</p>
+				<p className="text-gray-300 mb-2">ISBN: {book.ISBN}</p>
+				<p className="text-gray-300 mb-2">Year: {book.publicationYear}</p>
+				<p className="text-gray-300 mb-2">Genre: {book.genre}</p>
+				<p className="text-gray-300 mb-2">
+					On Loan: {book.onLoan ? "Yes" : "No"}
+				</p>
 			</div>
 		</div>
 	);
