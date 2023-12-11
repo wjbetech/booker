@@ -1,18 +1,35 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
-mongoose.connect(process.env.MONGODB_CONNECT);
-mongoose.Promise = global.Promise;
+const connectToMongo = () => {
+	if (mongoose.connection.readyState !== 1) {
+		mongoose.connect(process.env.MONGODB_CONNECT);
 
-const studentSchema = new Schema({
-	name: String,
-	age: Number,
-	schoolYear: Number,
-	class: String || Number,
-	teacher: String,
-	booksOnLoan: Array,
-});
+		mongoose.connection.on("connected", () => {
+			console.log("Connected to MongoDB");
+		});
 
-const Student =
-	mongoose.models.Student || mongoose.model("Student", studentSchema);
+		mongoose.connection.on("error", (err) => {
+			console.error("Error connecting to MongoDB:", err);
+		});
+	}
+};
+
+// This function initializes the Student model with the provided schema
+const initStudentModel = () => {
+	const studentSchema = new Schema({
+		name: String,
+		age: Number,
+		schoolYear: Number,
+		class: String || Number,
+		teacher: String,
+		booksOnLoan: Array,
+	});
+
+	return model("Student", studentSchema);
+};
+
+connectToMongo(); // Ensure connection is established
+
+const Student = mongoose.models.Student || initStudentModel();
 
 export default Student;

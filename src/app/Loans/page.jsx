@@ -3,9 +3,9 @@ import LoansView from "../(components)/LoansView";
 
 const LoansPage = () => {
 	return (
-		<div>
-			<h1 className="text-[var(--eggshell)]">Loans</h1>
-			<LoansView />
+		<div className="p-10">
+			<h1 className="text-[var(--eggshell)] pl-5 pb-5">Loans</h1>
+			<div className="flex flex-wrap w-[90%]">Loans</div>
 		</div>
 	);
 };

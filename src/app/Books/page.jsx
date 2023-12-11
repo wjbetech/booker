@@ -21,7 +21,7 @@ const BooksPage = async () => {
 			<h1 className="text-[var(--eggshell)] pl-5 pb-5">Books</h1>
 			<div className="flex flex-wrap w-[90%]">
 				{books.map((book) => (
-					<BooksView key={book} book={book} />
+					<BooksView key={book.ISBN} book={book} />
 				))}
 			</div>
 		</div>
