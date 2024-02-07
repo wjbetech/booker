@@ -1,3 +1,18 @@
+# booker
+
+A full-stack personal project based on a technological gap I identified in my previous job.
+
+The core premise of the app is for a school to keep track of students, classes, books that the school owns, as well as handle lending of books to students.
+
+Users can:
+- add a new student to a specific class, identifying both the student and class with properties like name, age, teacher, class name, etc.
+- add a new book to the "library", providing name of book, publication year, IMDB code, genre, artwork, etc.
+
+To do:
+- allow users to assign a book to a student, specifying the loan time (1 or 2 weeks)
+- add auth that would ideally work on a "school" level rather than an individual level
+
+
 This is a [Next.js](https://nextjs.org/) project
 bootstrapped with
 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
