@@ -1,10 +1,10 @@
-import Student from "@/app/(models)/student";
+import Student from "../../(models)/student";
 import { NextResponse } from "next/server";
 
-export async function GET(req) {
+export async function GET() {
 	try {
-		const data = await Student.find();
-		console.log(data);
+		const students = await Student.find();
+		return NextResponse.json({ students }, { status: 200 });
 	} catch (error) {
 		return NextResponse.json({ message: "Error!", error }, { status: 500 });
 	}
@@ -12,7 +12,7 @@ export async function GET(req) {
 
 export async function POST(req) {
 	try {
-		const body = await req.json();
+		const student = await req.json();
 		const studentData = body.newStudentData;
 		await Student.create(studentData);
 
