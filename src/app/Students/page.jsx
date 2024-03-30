@@ -12,16 +12,23 @@ const getStudents = async () => {
 	}
 };
 
-const StudentsPage = () => {
+const StudentsPage = async () => {
 
-  const { students } = getStudents();
+  const { students } = await getStudents();
   console.log(students);
 
 	return (
 		<div className="p-10">
 			<h1 className="text-[var(--eggshell)] pl-5 pb-5">Students</h1>
       <div className="flex flex-wrap w-[90%]">
-
+        {students.map((student) => (
+          <div className="text-white grid grid-flow-row w-[32%] m-auto text-center gap-6" key={student.name}>
+            <h3>{student.name}</h3>
+            <span>{student.age}</span>
+            <p>Class: {student.class}</p>
+            <p>Teacher: {student.teacher}</p>
+          </div>
+        ))}
 			</div>
 		</div>
 	);
