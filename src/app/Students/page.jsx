@@ -22,7 +22,7 @@ const StudentsPage = async () => {
 			<h1 className="text-[var(--eggshell)] pl-5 pb-5">Students</h1>
       <div className="flex flex-wrap w-[90%]">
         {students.map((student) => (
-          <div className="text-white grid grid-flow-row w-[32%] m-auto text-center gap-6" key={student.name}>
+          <div className="text-[var(--eggshell)] grid grid-flow-row w-[32%] m-auto text-center p-4" key={student.name}>
             <h3>{student.name}</h3>
             <span>{student.age}</span>
             <p>Class: {student.class}</p>

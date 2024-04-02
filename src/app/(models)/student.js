@@ -1,4 +1,4 @@
-import mongoose, { Schema, model } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const connectToMongo = () => {
 	if (mongoose.connection.readyState !== 1) {
@@ -15,21 +15,19 @@ const connectToMongo = () => {
 };
 
 // This function initializes the Student model with the provided schema
-const initStudentModel = () => {
-	const studentSchema = new Schema({
+
+const studentSchema = new Schema({
 		name: String,
 		age: Number,
 		schoolYear: Number,
 		class: String || Number,
 		teacher: String,
-		booksOnLoan: Array,
-	});
+		booksOnLoan: { type: [String], default: "none" }
+});
 
-	return model("Student", studentSchema);
-};
 
 connectToMongo(); // Ensure connection is established
 
-const Student = mongoose.models.Student || initStudentModel();
+const Student = mongoose.models.Student || studentSchema();
 
 export default Student;

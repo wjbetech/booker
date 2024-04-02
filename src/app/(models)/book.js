@@ -14,20 +14,16 @@ if (mongoose.connection.readyState !== 1) {
 	});
 }
 
-const bookSchema = new Schema(
-	{
+const bookSchema = new Schema({
 		title: String,
 		ISBN: String,
 		author: String,
 		publicationYear: Number,
 		imageUrl: String,
 		genre: String,
-		onLoan: Boolean,
-	},
-	{
-		timestamps: true,
-	},
-);
+		onLoan: { type: Boolean, default: false },
+    tags: { type: [String], index: true }
+});
 
 const Book = mongoose.models.Book || mongoose.model("Book", bookSchema);
 
